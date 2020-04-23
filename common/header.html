@@ -7,10 +7,9 @@ api.modifyClass("controller:composer", {
         const category = controller.get("category");
         const reply = this.get("model.reply");
         $placeholder = settings.topic_template_placeholder_indicator;
-        console.log("placeholder="+$placeholder);
         if($placeholder == ""){$placeholder = "[placeholder]"};
         if(category && category.topic_template != "" && category.topic_template == reply){
-            if(settings.display_all_topic_templates_as_placeholders == "true" || category.topic_template.indexOf($placeholder)!=-1 ){
+            if(settings.display_all_topic_templates_as_placeholders || category.topic_template.indexOf($placeholder)!=-1 ){ 
                 this.set("model.reply",reply.replace($placeholder,""));
                 setTimeout(function(){
                     $("textarea").each(function(){
