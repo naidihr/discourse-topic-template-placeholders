@@ -5,4 +5,4 @@ This Discourse theme component enable you to display Topic Templates as placehol
 This allows you to provide custom instructions as a placeholder for each topic.
 
 For further information see:
-https://meta.discourse.org/t/topic-template-placeholder-text-theme-component/149053?u=rhidian
+https://meta.discourse.org/t/topic-template-placeholder-text-theme-component/149053
