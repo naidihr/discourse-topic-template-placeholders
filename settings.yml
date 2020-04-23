@@ -1,4 +1,4 @@
 topic_template_placeholder_indicator:
   type: list
   default: '<!--placeholder-->' 
-  description: 'Include <!--placeholder--> in your Topic Template text.<br>This will make it display as a placeholder (watermark text) instead of template text.<br>You can change <!--placeholder--> to another word of phrase by editing this list.
+  description: 'Include <!--placeholder--> in your Topic Template text.<br>This will make it display as a placeholder (watermark text) instead of template text.<br>You can change <!--placeholder--> to another word of phrase by editing this list.'
