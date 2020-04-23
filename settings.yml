@@ -1,4 +1,4 @@
 topic_template_placeholder_indicator:
   type: string
-  default: '<!--placeholder-->' 
-  description: '<br><h4>Instructions:</h4><b>Include &lt;!--placeholder--&gt; at the start of your Topic Template text</b><br><br>This will make it display as a placeholder (watermark text) instead of as an editable text template.<br><br>Simply remove the &lt;--placeholder--gt; to change it back to template text.<br><br>You can change &lt;!--placeholder--&gt; to another word of phrase by editing this list.'
+  default: '[placeholder]' 
+  description: '<br><h4>Instructions:</h4><b>Type [placeholder] at the start of your Topic Template text</b><br><br>This will make it display as a placeholder (watermark text) instead of as an editable text template.<br><br>Simply remove the [placeholder] tag to change it back to template text.<br><br>You can change [placeholder] to another word of phrase by editing this list.<br><br>Leave this blank convert all topic templates to placeholders.'
