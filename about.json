@@ -1,9 +1,9 @@
 {
-  "name": "Topic Template Placeholder Text",
+  "name": "Topic Template Placeholders",
   "component": true,
-  "license_url": null,
-  "about_url": null,
-  "authors": null,
+  "license_url": "https://github.com/naidihr/discourse-topic-template-placeholders/blob/master/LICENSE",
+  "about_url": "https://github.com/naidihr/discourse-topic-template-placeholders/blob/master/README.md",
+  "authors": "Rhidian",
   "theme_version": null,
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
