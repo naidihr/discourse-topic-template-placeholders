@@ -1,0 +1,36 @@
+<script type="text/discourse-plugin" version="0.8">
+
+
+  const container = Discourse.__container__;
+
+// for (var namex in category) {
+// console.log("SettingProp = " + namex);
+//}
+// 
+
+
+api.modifyClass("controller:composer", {
+  actions: {
+    afterRefresh($preview) {
+        let category;
+        const controller = container.lookup('controller:navigation/category');
+        category = controller.get("category");
+        const reply = this.get("model.reply");
+        if(category && category.topic_template != "" && category.topic_template == reply && category.topic_template.indexOf("[placeholder]")==-1){
+           console.log("Template!");
+           //this.set("model.reply","")
+            setTimeout(function(){
+                $("textarea").each(function(){
+                    $(this).attr("placeholder",$(this).val());$(this).val('')
+                });
+            },1000);
+        }
+    },
+    typed() {
+      console.log("typed a letter");
+     // this.checkReplyLength();
+      this.get("model").typing();
+    }
+  }
+});
+</script>
