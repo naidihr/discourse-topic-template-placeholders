@@ -11,18 +11,12 @@ api.modifyClass("controller:composer", {
         const reply = this.get("model.reply");
         if(category && category.topic_template != "" && category.topic_template == reply && category.topic_template.indexOf("[placeholder]")==-1){
            console.log("Template!");
-           //this.set("model.reply","")
             setTimeout(function(){
                 $("textarea").each(function(){
-                    $(this).attr("placeholder",$(this).val());$(this).val('')
+                    $(this).attr("placeholder",$(this).val());$(this).val('');
                 });
             },1000);
         }
-    },
-    typed() {
-      console.log("typed a letter");
-     // this.checkReplyLength();
-      this.get("model").typing();
     }
   }
 });
