@@ -1,21 +1,23 @@
 <script type="text/discourse-plugin" version="0.8">
-
-const container = Discourse.__container__;
-
 api.modifyClass("controller:composer", {
   actions: {
     afterRefresh($preview) {
-        let category;
+        const container = Discourse.__container__;
         const controller = container.lookup('controller:navigation/category');
-        category = controller.get("category");
+        const category = controller.get("category");
         const reply = this.get("model.reply");
-        if(category && category.topic_template != "" && category.topic_template == reply && category.topic_template.indexOf("[placeholder]")==-1){
-           console.log("Template!");
-            setTimeout(function(){
-                $("textarea").each(function(){
-                    $(this).attr("placeholder",$(this).val());$(this).val('');
-                });
-            },1000);
+        $placeholder = settings.topic_template_placeholder_indicator;
+        console.log("placeholder="+$placeholder);
+        if($placeholder == ""){$placeholder = "[placeholder]"};
+        if(category && category.topic_template != "" && category.topic_template == reply){
+            if(category.topic_template.indexOf($placeholder)!=-1 ){
+                this.set("model.reply",reply.replace($placeholder,""));
+                setTimeout(function(){
+                    $("textarea").each(function(){
+                        $(this).attr("placeholder",$(this).val());$(this).val('');
+                    });
+                },1000);
+            }
         }
     }
   }
