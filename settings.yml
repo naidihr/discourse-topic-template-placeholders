@@ -1,4 +1,10 @@
+display_all_topic_templates_as_placeholders:
+  type: bool
+  default true:
+  description: 'Display all your Topic Templates as placeholders (watermark text)<br><br>Uncheck this setting to display templates as placeholders on a case-by-case basis - using the placeholder indicator text below.'
+
+
 topic_template_placeholder_indicator:
   type: string
   default: '[placeholder]' 
-  description: '<br><h4>Instructions:</h4><b>Type [placeholder] at the start of your Topic Template text</b><br><br>This will make it display as a placeholder (watermark text) instead of as an editable text template.<br><br>Simply remove the [placeholder] tag from your Topic Template to change it back to template text.<br><br>You can change [placeholder] to another word of phrase by editing this theme setting field.<br><br>Alternatively leave this theme setting field blank to convert all topic templates to placeholders.'
+  description: '<br><h4>Instructions:</h4>Use this option to display topic templates as placeholders on a case-by-case basis.<br><br>To use this..<vr><br><b>Type [placeholder] at the start of your Topic Template text</b><br><br>This will make it display as a placeholder (watermark text) instead of as an editable text template.<br><br>Simply remove the [placeholder] tag from your Topic Template to change it back to template text.<br><br>You can change [placeholder] to another word of phrase by editing this theme setting field.'
