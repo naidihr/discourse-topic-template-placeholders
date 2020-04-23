@@ -1,0 +1,1 @@
+# discourse-category-template-placeholders
