@@ -1,6 +1,6 @@
 display_all_topic_templates_as_placeholders:
   type: bool
-  default true:
+  default: true
   description: 'Display all your Topic Templates as placeholders (watermark text)<br><br>Uncheck this setting to display templates as placeholders on a case-by-case basis - using the placeholder indicator text below.'
 
 
