@@ -1,5 +1,7 @@
 import { withPluginApi } from 'discourse/lib/plugin-api';
 import { default as discourseComputed } from 'discourse-common/utils/decorators';
+import { CREATE_TOPIC } from 'discourse/models/composer'
+import { isEmpty } from "@ember/utils";
 
 export default {
   name: 'topic-template-init',
@@ -39,7 +41,9 @@ export default {
               settings.display_all_topic_templates_as_placeholders ||
               category.topic_template.indexOf (placeholder_indicator) == 0
             ) {
-              return category.topic_template;
+              return (category.topic_template.indexOf (placeholder_indicator) == 0 ?
+                category.topic_template :
+                `${placeholder_indicator}${category.topic_template}`)
             }
           }
           return this._super ();
@@ -47,7 +51,7 @@ export default {
       });
       api.modifyClass ('model:composer', {
         applyTopicTemplate (oldCategoryId, categoryId) {
-          this._super ();
+          this._super (oldCategoryId, categoryId);
 
           const placeholder_indicator = settings.topic_template_placeholder_indicator
             ? settings.topic_template_placeholder_indicator
