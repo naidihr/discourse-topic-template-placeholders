@@ -1,8 +1,5 @@
-import {withPluginApi} from 'discourse/lib/plugin-api';
-import {
-  on,
-  default as discourseComputed,
-} from 'discourse-common/utils/decorators';
+import { withPluginApi } from 'discourse/lib/plugin-api';
+import { default as discourseComputed } from 'discourse-common/utils/decorators';
 
 export default {
   name: 'topic-template-init',
