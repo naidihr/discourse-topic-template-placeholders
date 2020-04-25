@@ -51,7 +51,7 @@ export default {
           const placeholder_indicator = settings.topic_template_placeholder_indicator
             ? settings.topic_template_placeholder_indicator
             : '[placeholder]';
-          if (this.get ('reply').indexOf (placeholder_indicator) == 0) {
+          if (settings.display_all_topic_templates_as_placeholders || this.get ('reply').indexOf (placeholder_indicator) == 0 ) {
             this.set ('reply', '');
           }
         },
