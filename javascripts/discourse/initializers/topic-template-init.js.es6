@@ -26,11 +26,8 @@ export default {
       api.modifyClass ('component:composer-editor', {
         @discourseComputed ('composer.requiredCategoryMissing')
         replyPlaceholder (requiredCategoryMissing) {
-          const container = Discourse.__container__;
-          const controller = container.lookup (
-            'controller:navigation/category'
-          );
-          const category = controller.get ('category');
+          const category_id = this.composer._categoryId;
+          const category = this.site.categories.findBy ('id', category_id);
           const placeholder_indicator = settings.topic_template_placeholder_indicator
             ? settings.topic_template_placeholder_indicator
             : '[placeholder]';
@@ -39,9 +36,9 @@ export default {
               settings.display_all_topic_templates_as_placeholders ||
               category.topic_template.indexOf (placeholder_indicator) == 0
             ) {
-              return (category.topic_template.indexOf (placeholder_indicator) == 0 ?
+              return category.topic_template.indexOf (placeholder_indicator) == 0 ?
                 category.topic_template :
-                `${placeholder_indicator}${category.topic_template}`)
+                `${placeholder_indicator}${category.topic_template}`
             }
           }
           return this._super ();
