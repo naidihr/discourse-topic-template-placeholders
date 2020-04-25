@@ -1,7 +1,5 @@
 import { withPluginApi } from 'discourse/lib/plugin-api';
 import { default as discourseComputed } from 'discourse-common/utils/decorators';
-import { CREATE_TOPIC } from 'discourse/models/composer'
-import { isEmpty } from "@ember/utils";
 
 export default {
   name: 'topic-template-init',
