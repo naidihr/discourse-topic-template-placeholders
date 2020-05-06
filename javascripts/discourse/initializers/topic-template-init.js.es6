@@ -28,7 +28,7 @@ export default {
             const placeholder_indicator = settings.topic_template_placeholder_indicator
               ? settings.topic_template_placeholder_indicator
               : '[placeholder]';
-            if (category && category.topic_template != '') {
+            if (category && category.topic_template != null) {
               if (
                 settings.display_all_topic_templates_as_placeholders ||
                 category.topic_template.indexOf (placeholder_indicator) == 0
@@ -48,13 +48,17 @@ export default {
         applyTopicTemplate (oldCategoryId, categoryId) {
           this._super (oldCategoryId, categoryId);
 
+          const category = this.site.categories.findBy("id", categoryId);
+
           const placeholder_indicator = settings.topic_template_placeholder_indicator
             ? settings.topic_template_placeholder_indicator
             : '[placeholder]';
+
           if (
             (settings.display_all_topic_templates_as_placeholders ||
               this.get ('reply').indexOf (placeholder_indicator) == 0) &&
-            this.category.topic_template == this.get ('reply')
+            category.topic_template != null &&
+            category.topic_template == this.get ('reply')
           ) {
             this.set ('reply', '');
           }
