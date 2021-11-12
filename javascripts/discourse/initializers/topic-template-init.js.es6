@@ -1,7 +1,7 @@
 import { withPluginApi } from 'discourse/lib/plugin-api';
 import { default as discourseComputed } from 'discourse-common/utils/decorators';
 
-const PLUGIN_ID = 'topic-template-placeholders-text';
+const PLUGIN_ID = "topic-template-placeholders-text";
 
 export default {
   name: 'topic-template-init',
