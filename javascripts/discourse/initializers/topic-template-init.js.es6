@@ -6,6 +6,7 @@ export default {
   initialize (container) {
     withPluginApi ('0.8.12', api => {
       api.modifyClass ('component:d-editor', {
+        pluginId: 'discourse-topic-template-placeholders', 
         @discourseComputed ('placeholder')
         placeholderTranslated (placeholder) {
           const placeholder_indicator = settings.topic_template_placeholder_indicator
@@ -20,6 +21,7 @@ export default {
         },
       });
       api.modifyClass ('component:composer-editor', {
+        pluginId: 'discourse-topic-template-placeholders',
         @discourseComputed ('composer.requiredCategoryMissing')
         replyPlaceholder (requiredCategoryMissing) {
           if (!(this.topic !== null && settings.only_apply_on_first_post)) {
@@ -47,6 +49,7 @@ export default {
         },
       });
       api.modifyClass ('model:composer', {
+        pluginId: 'discourse-topic-template-placeholders',
         applyTopicTemplate (oldCategoryId, categoryId) {
           this._super (oldCategoryId, categoryId);
 
